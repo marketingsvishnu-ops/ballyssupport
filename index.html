@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For More Information</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>FOR MORE INFORMATION</h1>
+    <div class="tabs">
+      <div class="tab active" onclick="showLang('en', this)">English</div>
+      <div class="tab" onclick="showLang('hi', this)">हिन्दी</div>
+      <div class="tab" onclick="showLang('kn', this)">ಕನ್ನಡ</div>
+      <div class="tab" onclick="showLang('ta', this)">தமிழ்</div>
+      <div class="tab" onclick="showLang('te', this)">తెలుగు</div>
+    </div>
+    <div class="content visible" id="text">
+      ➡️ For more information,
+    </div>
+    <div class="click-direction">
+      👇 Click below to message on WhatsApp
+    </div>
+    <a href="https://wa.me/918141897387?text=FOR%20MORE%20INFORMATION" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      Message on WhatsApp
+    </a>
+    <div class="logo">
+      <img src="logo.png" alt="AirBuzz logo">
+    </div>
+  </div>
+  <script>
+    const messages = {
+      en: "➡️ For more information,",
+      hi: "➡️ अधिक जानकारी के लिए,",
+      kn: "➡️ ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ,",
+      ta: "➡️ மேலும் தகவலுக்கு,",
+      te: "➡️ మరింత సమాచారం కోసం,"
+    };
+    function showLang(lang, el) {
+      document.getElementById("text").innerText = messages[lang];
+      document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+      el.classList.add("active");
+    }
+  </script>
+</body>
+</html>
